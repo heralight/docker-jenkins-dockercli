@@ -1,0 +1,6 @@
+# Jenkins docker image with docker CLI
+
+jenkins/jenkins doesn't include docker command (cli), that's why docker-plugins failed...
+This extension fix this missing part...
+
+
