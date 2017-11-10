@@ -3,6 +3,13 @@
 jenkins/jenkins doesn't include docker command (cli), that's why docker-plugins failed...
 This extension fix this missing part.
 
+## Howto use it
+
+from [docker hub](https://hub.docker.com) use this image:
+
+[heralight/docker-jenkins-dockercli](https://hub.docker.com/r/heralight/docker-jenkins-dockercli/)
+
+
 ## Actual status
 
 This image is support alpine and debian.
