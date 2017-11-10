@@ -1,15 +1,11 @@
-FROM jenkins/jenkins:lts-alpine
-# if we want to install via apt
+FROM jenkins/jenkins:lts
 USER root
-#RUN apt-get update && apt-get install -y ruby make more-thing-here
 
-RUN apk add --no-cache bash curl git openssh-client
+RUN apt-get update && apt-get install -y bash curl git openssh-client
 
-ENV VERSION "17.03.1-ce"
-RUN curl -L -o /tmp/docker-$VERSION.tgz https://get.docker.com/builds/Linux/x86_64/docker-$VERSION.tgz \
-    && tar -xz -C /tmp -f /tmp/docker-$VERSION.tgz \
-    && mv /tmp/docker/docker /usr/bin \
-    && rm -rf /tmp/docker-$VERSION /tmp/docker
+RUN curl -L -o /tmp/docker-17.09.0-ce.tgz https://get.docker.com/builds/Linux/x86_64/docker-17.09.0-ce.tgz && tar -xz -C /tmp -f /tmp/docker-17.09.0-ce.tgz && mv /tmp/docker/docker /usr/bin && rm -rf /tmp/docker-17.09.0-ce /tmp/docker
+
+RUN curl -L -o /tmp/docker-compose https://github.com/docker/compose/releases/download/1.17.1/docker-compose-Linux-x86_64 && mv /tmp/docker-compose /usr/bin && chmod 500 /usr/bin/docker-compose && rm -rf /tmp/docker-compose
 
 USER jenkins # drop back
 
