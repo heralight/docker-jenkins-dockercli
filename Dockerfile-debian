@@ -13,5 +13,5 @@ RUN curl -L -o /tmp/docker-compose https://github.com/docker/compose/releases/do
     && chmod 500 /usr/bin/docker-compose \
     && rm -rf /tmp/docker-compose
 
-USER jenkins # drop back
+USER jenkins
 

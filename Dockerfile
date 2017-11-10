@@ -7,5 +7,5 @@ RUN curl -L -o /tmp/docker-17.09.0-ce.tgz https://download.docker.com/linux/stat
 
 RUN curl -L -o /tmp/docker-compose https://github.com/docker/compose/releases/download/1.17.1/docker-compose-Linux-x86_64 && mv /tmp/docker-compose /usr/bin && chmod 500 /usr/bin/docker-compose && rm -rf /tmp/docker-compose
 
-USER jenkins # drop back
+USER jenkins
 
