@@ -1,7 +1,7 @@
-FROM jenkins/jenkins:lts
+FROM jenkins/jenkins:lts-alpine
 USER root
 
-RUN apt-get update && apt-get install -y bash curl git openssh-client
+RUN apk add --no-cache bash curl git openssh-client
 
 RUN curl -L -o /tmp/docker-17.09.0-ce.tgz https://download.docker.com/linux/static/stable/x86_64/docker-17.09.0-ce.tgz && tar -xz -C /tmp -f /tmp/docker-17.09.0-ce.tgz && mv /tmp/docker/docker /usr/bin && rm -rf /tmp/docker-17.09.0-ce /tmp/docker
 

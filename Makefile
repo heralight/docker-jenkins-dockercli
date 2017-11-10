@@ -1,6 +1,6 @@
 push:
 	git checkout -b $(tag)
-	jenkinsversion=$(dockerversion) dockerversion=$(jenkinsversion) dockercomposeversion=$(dockercomposeversion)  ./envsubstSc.sh < Dockerfile-$(platform)  2> /dev/null > Dockerfile
+	dockerversion=$(dockerversion) jenkinsversion=$(jenkinsversion) dockercomposeversion=$(dockercomposeversion)  ./envsubstSc.sh < Dockerfile-$(platform)  2> /dev/null > Dockerfile
 	git commit -am"auto-build $(tag)"
 	git tag -f $(tag) `git rev-parse HEAD`
 	git checkout -
